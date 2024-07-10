@@ -1,5 +1,8 @@
 const booksContainer = document.querySelector('.books-container');
 const addBtn = document.querySelector('.add-book');
+const closeModal = document.querySelector('.close')
+const modal = document.querySelector('dialog')
+const addBookBtn = document.querySelector('.submit-book')
 
 const myLibrary = [
     {
@@ -44,8 +47,7 @@ function addBookToLibrary() {
 
 }
 
-// I want the books to be displayed in the center of the screen
-// In a ladder shapped fasion kind of like amazon
+
 function displayBooks() {
     for (let i = 0; i < myLibrary.length; i++) {
         const bookCard = document.createElement("div");
@@ -72,4 +74,16 @@ function displayBooks() {
 
 displayBooks()
 
-addBtn.addEventListener('click',)
+closeModal.addEventListener('click', () => {
+    modal.setAttribute("class", "")
+    addBtn.removeAttribute("hidden")
+})
+
+addBtn.addEventListener("click", () => {
+    modal.setAttribute("class", "modal")
+    addBtn.setAttribute('hidden', '')
+})
+
+addBookBtn.addEventListener("click", () => {
+    console.log('button works!')
+})

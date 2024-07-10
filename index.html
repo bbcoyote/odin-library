@@ -11,6 +11,29 @@
     <h1 class="title">My Library</h1>
     <div class="books-container"></div>
     <div class="footer">
+      <dialog>
+        <button class="close">&#10060</button>
+        <form method="dialog">
+          <label for="book-title">Title
+            <input type="text" id="book-title">
+          </label>
+          <label for="book-author">Author
+            <input type="text" id="book-author">
+          </label>
+          <label for="book-pages">Pages
+            <input type="text" id="book-pages">
+          </label>
+          <legend class="radio">Have you read this book?
+          <label for="read-no">No
+            <input type="radio" name="have-read" id="read-no" value="No">
+          </label>
+          <label for="read-yes">Yes
+            <input type="radio" name="have-read" id="read-yes" value="Yes">
+          </label>
+        </legend>
+        <button class="submit-book">Add Book</button>
+        </form>
+      </dialog>
       <button class="add-book">Add Book</button>
     </div>
   </body>

@@ -81,9 +81,23 @@ body {
 }
 
 .footer {
-  position: sticky;
-  bottom: 0;
-  button {
+  display: flex;
+  flex-direction: column;
+
+  .add-book {
+    width: 12rem;
+    height: 2.5rem;
+    font-size: 1.7rem;
+    background-color: rgb(131, 131, 255);
+    border-radius: 0.55rem;
+    border: 1px solid antiquewhite;
+    word-spacing: 12px;
+    z-index: 1;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .submit-book {
     width: 12rem;
     height: 2.5rem;
     font-size: 1.7rem;
@@ -96,4 +110,32 @@ body {
 
 .add-book:hover {
   background-color: rgb(75, 75, 148);
+}
+
+.modal {
+  background-color: rgb(41, 36, 36);
+  color: antiquewhite;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 90vw;
+  margin: auto;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    input {
+      margin-left: 1rem;
+      text-align: center;
+    }
+  }
+  .close {
+    width: 4rem;
+    height: 4rem;
+    align-self: end;
+    background-color: rgb(131, 131, 255);
+  }
 }
