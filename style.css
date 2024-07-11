@@ -71,6 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  backdrop-filter: blur(100px);
 }
 
 .books-container > div {
@@ -80,33 +81,32 @@ body {
   font-size: 2rem;
 }
 
-.footer {
+/* .footer {
   display: flex;
-  flex-direction: column;
-
-  .add-book {
-    width: 12rem;
-    height: 2.5rem;
-    font-size: 1.7rem;
-    background-color: rgb(131, 131, 255);
-    border-radius: 0.55rem;
-    border: 1px solid antiquewhite;
-    word-spacing: 12px;
-    z-index: 1;
-    position: sticky;
-    bottom: 0;
-  }
-
-  .submit-book {
-    width: 12rem;
-    height: 2.5rem;
-    font-size: 1.7rem;
-    background-color: rgb(131, 131, 255);
-    border-radius: 0.55rem;
-    border: 1px solid antiquewhite;
-    word-spacing: 12px;
-  }
+  flex-direction: column; */
+.add-book {
+  width: 12rem;
+  height: 2.5rem;
+  font-size: 1.7rem;
+  background-color: rgb(131, 131, 255);
+  border-radius: 0.55rem;
+  border: 1px solid antiquewhite;
+  word-spacing: 12px;
+  z-index: 1;
+  position: sticky;
+  bottom: 0;
 }
+
+.submit-book {
+  width: 12rem;
+  height: 2.5rem;
+  font-size: 1.7rem;
+  background-color: rgb(131, 131, 255);
+  border-radius: 0.55rem;
+  border: 1px solid antiquewhite;
+  word-spacing: 12px;
+}
+/* } */
 
 .add-book:hover {
   background-color: rgb(75, 75, 148);
@@ -118,9 +118,12 @@ body {
   font-size: 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  min-width: 90vw;
+  min-width: 50vw;
   margin: auto;
+  position: sticky;
+  bottom: 20%;
   form {
     display: flex;
     flex-direction: column;
@@ -138,4 +141,8 @@ body {
     align-self: end;
     background-color: rgb(131, 131, 255);
   }
+}
+
+dialog::backdrop {
+  background-color: brown;
 }

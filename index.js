@@ -3,6 +3,11 @@ const addBtn = document.querySelector('.add-book');
 const closeModal = document.querySelector('.close')
 const modal = document.querySelector('dialog')
 const addBookBtn = document.querySelector('.submit-book')
+const titleInput = document.querySelector('#book-title')
+const authorInput = document.querySelector('#book-author')
+const pagesInput = document.querySelector('#book-pages')
+const radioValue = document.querySelectorAll('.radio');
+
 
 const myLibrary = [
     {
@@ -39,12 +44,36 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-// Okay this will be a button on a form that calls a new Book() and each input will
-// be this. value. we could either make it a modal or a dialog or just display the form
-// on the page. we could make it the footer with a sticky position so it's always visible.
 
+// to get the value of the radio buttons we need to querySelectorAll()
+// we for loop through the node list then we check "if" checked then save the
+// value in a variable then set the this.read value to that variable?
+// save the variable in that for loop
+function getRadioValue() {
+
+}
 function addBookToLibrary() {
+    console.log("start")
 
+    for (let i = 0; i < radioValue.length; i++) {
+        if (radioValue[i].checked) {
+            console.log(i)
+            myLibrary.push(new Book(
+                titleInput.value,
+                authorInput.value,
+                pagesInput.value,
+                radioValue[i].value
+            ));
+
+        } else if (!radioValue[i].checked) {
+            console.log(radioValue[i], "this was not logged")
+        }
+    }
+
+
+
+    console.log(myLibrary)
+    console.log("function end")
 }
 
 
@@ -75,15 +104,19 @@ function displayBooks() {
 displayBooks()
 
 closeModal.addEventListener('click', () => {
-    modal.setAttribute("class", "")
-    addBtn.removeAttribute("hidden")
+    modal.setAttribute("class", "");
+    addBtn.removeAttribute("hidden");
 })
 
 addBtn.addEventListener("click", () => {
-    modal.setAttribute("class", "modal")
-    addBtn.setAttribute('hidden', '')
+    modal.setAttribute("class", "modal");
+    addBtn.setAttribute('hidden', '');
 })
 
 addBookBtn.addEventListener("click", () => {
-    console.log('button works!')
+    addBookToLibrary();
+    displayBooks();
+    modal.setAttribute("class", "");
+    addBtn.removeAttribute("hidden");
 })
+

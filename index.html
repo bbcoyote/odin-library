@@ -10,7 +10,7 @@
   <body>
     <h1 class="title">My Library</h1>
     <div class="books-container"></div>
-    <div class="footer">
+    <!-- <div class="footer"> -->
       <dialog>
         <button class="close">&#10060</button>
         <form method="dialog">
@@ -23,18 +23,18 @@
           <label for="book-pages">Pages
             <input type="text" id="book-pages">
           </label>
-          <legend class="radio">Have you read this book?
+          <legend class="radio-legend">Have you read this book?
           <label for="read-no">No
-            <input type="radio" name="have-read" id="read-no" value="No">
+            <input class="radio" type="radio" name="have-read" id="read-no" value="No">
           </label>
           <label for="read-yes">Yes
-            <input type="radio" name="have-read" id="read-yes" value="Yes">
+            <input class="radio" type="radio" name="have-read" id="read-yes" value="Yes">
           </label>
         </legend>
         <button class="submit-book">Add Book</button>
         </form>
       </dialog>
       <button class="add-book">Add Book</button>
-    </div>
+    <!-- </div> -->
   </body>
 </html>
