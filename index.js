@@ -54,7 +54,7 @@ function getRadioValue() {
 }
 function addBookToLibrary() {
     console.log("start")
-
+    let checkedValue
     for (let i = 0; i < radioValue.length; i++) {
         if (radioValue[i].checked) {
             console.log(i)
@@ -64,12 +64,29 @@ function addBookToLibrary() {
                 pagesInput.value,
                 radioValue[i].value
             ));
-
-        } else if (!radioValue[i].checked) {
-            console.log(radioValue[i], "this was not logged")
+            checkedValue = radioValue[i].value
         }
     }
 
+    const bookCard = document.createElement("div");
+    const title = document.createElement("span");
+    const author = document.createElement('span');
+    const pages = document.createElement('span');
+    const read = document.createElement('span');
+    const bookTitle = document.createElement("span");
+    const bookAuthor = document.createElement('span');
+    const bookPages = document.createElement('span');
+    const bookRead = document.createElement('span');
+    read.textContent = `Have you read?`;
+    pages.textContent = `Page Count`
+    author.textContent = `Author's Name`;
+    title.textContent = `Title`;
+    bookRead.textContent = `${checkedValue}`;
+    bookPages.textContent = `${pagesInput.value}`
+    bookAuthor.textContent = `${authorInput.value}`;
+    bookTitle.textContent = `${titleInput.value}`;
+    booksContainer.appendChild(bookCard)
+    bookCard.append(title, bookTitle, author, bookAuthor, pages, bookPages, read, bookRead);
 
 
     console.log(myLibrary)
@@ -115,7 +132,6 @@ addBtn.addEventListener("click", () => {
 
 addBookBtn.addEventListener("click", () => {
     addBookToLibrary();
-    displayBooks();
     modal.setAttribute("class", "");
     addBtn.removeAttribute("hidden");
 })
